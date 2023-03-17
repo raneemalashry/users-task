@@ -26,7 +26,7 @@ class UserRequest extends FormRequest
             'email' => 'required|email|unique:users,email',
             'bio' => 'required|string',
             'type' => 'required|in:first,second,third',
-           'certificate_id'=> 'nullable|required_if:type,second',
+           'certificate_id'=> 'nullable|required_if:type,second|exists:certificates,id',
             'latitude'=> 'nullable|required_if:type,third',
             'longitude'=> 'nullable|required_if:type,third',
             'birth_date' => 'nullable|required_if:type,third|date',
